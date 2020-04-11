@@ -1,20 +1,303 @@
 *{
-  font-family: 'Roboto';
+  /* font-family: ; */
+  font-family: arial, 'Roboto';
+  /* color: white; */
+  font-weight: lighter;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@keyframes float {
+    0% {
+      transform: translate(-50%, -80%);
+    }
+    50%{
+      transform: translate(-50%, -50%);
+    }
+    100%{
+      transform: translate(-50%, -80%);
+    }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 0;
+}
+
+::-webkit-scrollbar-track {
+  background: #eee;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 10px;
+  transition: background 0.25s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+
+html{
+  height: 100%;
 }
 html, body{
   margin:0;
+  background-color: white;
+  height: 100%;
+  width: 100%;
 }
-.home_background{
+/* .home_background{
   height: 100vh;
   background: rgb(144, 238, 144);
   position: relative;
   z-index: 0;
-}
+} */
 a {
   text-decoration: none;
   color: black;
 }
-.nav_container{
+
+
+
+#title-section{
+  background: linear-gradient(-45deg, rgba(255,110,47,1), rgba(255,74,223,1), rgba(87, 219, 255), rgba(3, 252, 127));
+  background-size:400% 400%;
+  position: relative;
+  animation: gradient 20s ease-in-out infinite;
+  /* color: white; */
+}
+
+
+
+#title-section > .text-container > *{
+  /* margin:0; */
+  color: white;
+}
+#title-section h1{
+  font-size: 400%;
+  margin: 20px 0;
+}
+
+#title-section h2{
+  font-size: 170%;
+}
+
+#covid-section{
+  background-image: url('https://abrilguiadoestudante.files.wordpress.com/2020/03/nota-comitc3aa-de-emergc3aancia-do-mec-apresenta-plataforma-de-monitoramento-do-vc3adrus.jpg');
+  /* background-image: url("https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/news/2020/01_2020/coronavirus_1/1800x1200_coronavirus_1.jpg?resize=*:350px"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: 1;
+  padding: 0;
+  color: white;
+}
+
+#todolist-section{
+  background-color: #FF4136;
+  color: white;
+  padding:0;
+}
+
+#shuffletube-section{
+  background-color: rgb(60,60,60);
+  color: white;
+  padding:0;
+}
+
+#ideas-section{
+  background-color: #39CCCC;
+  color: white;
+}
+
+.image-overlay{
+  position:absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(20, 20, 20, 0.8);
+}
+/**/
+
+div.section{
+  width: 100%;
+  height: 100%;
+  color: black;
+  box-sizing: border-box;
+  padding: 10px;
+  position: relative;
+}
+
+div.section h1{
+  font-size: 40px;
+}
+
+div.section h2{
+  font-size: 25px;
+}
+
+
+#title-section .text-container{
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -80%);
+  animation: float 10s ease-in-out infinite;
+  color: black;
+}
+
+.text-container{
+  display: block;
+  /* display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%); */
+  margin-right: 30px;
+}
+
+#todolist-section .text-container{
+  margin-left: 30px;
+}
+
+.text-container > h2{
+  margin:0;
+}
+
+dl > *{
+    font-size: 22px;
+}
+
+p, a{
+  font-size: 18px;
+}
+
+p{
+  margin: 30px 0;
+}
+
+a{
+    color: #0074D9;
+    text-decoration: underline;
+}
+
+.button{
+  top: 0;
+  text-decoration: none;
+  display: inline-block;
+  padding:10px;
+  background-color: rgb(50,50,50);
+  color: white;
+  /* border-color: ; */
+  position: relative;
+  border-bottom: 5px solid rgb(40,40,40);
+  box-sizing: content-box;
+  cursor: pointer;
+  transition: background 0.25s, border 0.25s, top 0.25s;
+}
+.button:hover{
+  background-color: rgb(45,45,45);
+}
+.button:active{
+  border-bottom-width: 2px;
+  top:3px;
+}
+
+#todolist-section .button{
+  background-color: rgb(240,0,0);
+  border-color: rgb(220,0,0);
+  box-sizing: content-box;
+}
+
+#shuffletube-section .button{
+  background-color: rgb(255,0,0);
+  border-color: rgb(200,0,0);
+  box-sizing: content-box;
+}
+
+#arrow{
+  position: absolute;
+  bottom: 20px;
+  right: 50%;
+  transform: translate(-50%,0);
+  animation: float 2s ease-in-out infinite;
+  color: white;
+}
+
+/* .image{
+  position: relative;
+}
+.image > */
+.content{
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding:0 30px;
+  width:80%;
+}
+
+.content > img{
+  width:500px;
+  height: 300px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px 0px rgb(0,0,0,0.5);
+  /* float: right;
+  margin:10px; */
+  /* position: absolute;
+  bottom: 20px;
+  right:20px; */
+}
+
+#shuffletube-icon{
+  width: 35px;
+}
+
+#todolist-screenshot{
+  box-shadow:color 0 0 20px 0px rgb(100,100,100,0.5);
+}
+
+@media only screen and (max-width: 860px) {
+  .content {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  #title-section .text-container{
+    left: 55%;
+    width: 100%;
+  }
+  .content {
+    display: block;
+  }
+  .content > img {
+    width:100%;
+    height: 62.5%;
+  }
+}
+
+
+footer{
+  background-color: rgb(50,50,50);
+  color:white;
+  margin: 0;
+  padding: 10px 20px;
+}
+/* .nav_container{
   display: flex;
   padding: 0 0 0 10px;
 }
@@ -48,4 +331,4 @@ a {
 }
 #down:hover{
   cursor:pointer;
-}
+} */
